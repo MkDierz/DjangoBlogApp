@@ -1,13 +1,13 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<h3>Kontrol Paneli</h3>
+<h3>Control Board</h3>
 <hr>
 <p>
-    Hoşgeldiniz, <small>{{request.user.username}}</small>
+    Welcome, <small>{{request.user.username}}</small>
 </p>
 <hr>
-<a class = "btn btn-danger" href = "{% url 'article:addarticle' %}">Makale Ekle </a>
+<a class = "btn btn-danger" href = "{% url 'article:addarticle' %}">Add New Article </a>
 <hr>
 {% if articles %}
 <table class="table">
