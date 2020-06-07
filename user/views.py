@@ -17,8 +17,13 @@ def register(request):
         newUser.set_password(password)
 
         newUser.save()
+<<<<<<< HEAD
         login(request, newUser)
         messages.info(request, "Başarıyla Kayıt Oldunuz...")
+=======
+        login(request,newUser)
+        messages.info(request,"You have successfully registered")
+>>>>>>> b19a82f1d410c419cd0f0f3ad96bb51466c08a2c
 
         return redirect("index")
     context = {
@@ -41,16 +46,28 @@ def loginUser(request):
         user = authenticate(username=username, password=password)
 
         if user is None:
+<<<<<<< HEAD
             messages.info(request, "Kullanıcı Adı veya Parola Hatalı")
             return render(request, "login.html", context)
 
         messages.success(request, "Başarıyla Giriş Yaptınız")
         login(request, user)
+=======
+            messages.info(request,"Username or Password Incorrect")
+            return render(request,"login.html",context)
+
+        messages.success(request,"You have successfully logged in.")
+        login(request,user)
+>>>>>>> b19a82f1d410c419cd0f0f3ad96bb51466c08a2c
         return redirect("index")
     return render(request, "login.html", context)
 
 
 def logoutUser(request):
     logout(request)
+<<<<<<< HEAD
     messages.success(request, "Başarıyla Çıkış Yaptınız")
+=======
+    messages.success(request,"You have successfully logged out")
+>>>>>>> b19a82f1d410c419cd0f0f3ad96bb51466c08a2c
     return redirect("index")
