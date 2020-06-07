@@ -6,7 +6,7 @@
     
         <div class="col-md-10 offset-md-3">
             <div class="col-lg-8">
-                <h3>Makaleler</h3>
+                <h3>Articles</h3>
                 <hr>
                 </div>
         </div>
@@ -40,7 +40,7 @@
       <!-- Author -->
       <p class="lead">
         
-        {{article.author.username}} tarafından yayınlandı
+        {{article.author.username}} by Kelompok 2
       </p>
 
       <hr>
@@ -61,7 +61,7 @@
           {{article.content|safe|truncatewords:50}}
       </p>
 
-      <a href="{% url 'article:detail' article.slug %}" class ="btn btn-danger my-3">Devamını Oku</a>
+      <a href="{% url 'article:detail' article.slug %}" class ="btn btn-danger my-3">Read more</a>
       <hr>
          
         </div>
@@ -77,7 +77,7 @@
     <div class="col-md-10 offset-md-3">
         <div class="col-lg-8">
 <div class = "alert alert-danger">
-   Makale Bulunamadı
+   No Articles Found
 </div>
 </div>
 </div>
