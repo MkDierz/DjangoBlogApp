@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h3>Kontrol Paneli</h3>
+<hr>
+<p>
+    Hoşgeldiniz, <small>{{request.user.username}}</small>
+</p>
+<hr>
+<a class = "btn btn-danger" href = "{% url 'article:addarticle' %}">Makale Ekle </a>
+<hr>
+{% if articles %}
+<table class="table">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">History</th>
+            <th scope="col">Update</th>
+            <th scope="col">Clear</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for article in articles %}
+          <tr>
+            <th scope="row">{{article.id}}</th>
+            <td><a href="{% url 'article:detail' article.slug %}">{{article.title}}</a></td>
+            <td>{{article.author.username}}</td>
+            <td>{{article.created_date}}</td>
+            <td><a href="{% url 'article:update' article.slug %}" class = "btn btn-danger">Add Article</a></td>
+            <td><a href="{% url 'article:delete' article.slug %}" class = "btn btn-danger">Clear</a> </td>
+              
+          </tr>
+          {% endfor %}
+          
+        </tbody>
+      </table>
+{% else %}
+
+<div class = "alert alert-danger">
+    You have no articles yet ...
+
+</div>
+{% endif %}
+
+
+
+{% endblock body %}
+
