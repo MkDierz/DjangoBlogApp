@@ -1,0 +1,19 @@
+. {
+    text-decoration: none;
+}
+
+html {
+  height: 100%;
+    text-decoration: none;
+}
+body {
+  min-height: 100%;
+}
+.container{
+    min-height: 100%;
+}
+a{
+    text-decoration: none;
+    text-decoration: white;
+    text-decoration-line: none;
+}
