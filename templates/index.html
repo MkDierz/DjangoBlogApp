@@ -1,19 +1,19 @@
 {% extends "layout.html" %}
 
 {% block body %}
+    <p  class="text-white">
+        {% if request.user.is_authenticated %}
+            Logged In, {{request.user.username}}
+        {% else %}
+            Not Logged In
+        {% endif %}
 
-<div class="jumbotron text-center">
-  <h3> Welcome to Team 2 Blog </h3>
-  <p> This is The Final Project For Subject Computer sciences. </p>
+    </p>
+
+    <div class="jumbotron jumbotron-fluid text-center bg-warning">
+    <h3 class="text-white"> Welcome to Team 2 Blog </h3>
+    <p> This is The Final Project For Subject Computer sciences. </p>
 </div>
 
 
-<p>
-        {% if request.user.is_authenticated %}
-                Logged In, {{request.user.username}}
-        {% else %}
-                Not Logged In
-        {% endif %}
-
-</p>
 {% endblock body %}
